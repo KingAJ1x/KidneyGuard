@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KidneyGuard</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F7F9FC;
+      --navy: #0A2540;
+      --blue: #2D7DD2;
+      --blue-light: #E8F4FD;
+      --body: #6B7C93;
+      --white: #FFFFFF;
+      --border: #E2EAF0;
+      --accent: #1A9EE2;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--navy);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(247,249,252,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 60px;
+    }
+
+    .nav-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo .dot {
+      width: 8px; height: 8px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--body);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    /* SECTIONS */
+    section { padding: 100px 48px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    /* HERO */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 140px;
+      padding-bottom: 80px;
+      background: linear-gradient(160deg, #F7F9FC 60%, #E8F4FD 100%);
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: var(--blue-light);
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    h1 span { color: var(--blue); }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--body);
+      max-width: 480px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 13px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn:hover { background: #1A6BBF; transform: translateY(-1px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--blue);
+      border: 1.5px solid var(--blue);
+      margin-left: 12px;
+    }
+    .btn-ghost:hover { background: var(--blue-light); transform: translateY(-1px); }
+
+    /* DEVICE HERO VISUAL */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .device-wrap {
+      position: relative;
+      width: 340px;
+      height: 340px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .device-glow {
+      position: absolute;
+      inset: -20px;
+      background: radial-gradient(circle, rgba(45,125,210,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    /* STAT STRIP */
+    .stats-strip {
+      background: var(--navy);
+      padding: 48px;
+    }
+
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 24px 16px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.03em;
+    }
+
+    .stat-num span { color: var(--accent); }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    /* OUR PROJECT */
+    #project { background: var(--white); }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-lead {
+      font-size: 1rem;
+      color: var(--body);
+      max-width: 600px;
+      margin-bottom: 56px;
+      line-height: 1.75;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 32px rgba(10,37,64,0.08);
+      transform: translateY(-3px);
+    }
+
+    .card-icon {
+      width: 44px; height: 44px;
+      background: var(--blue-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+
+    .card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--navy);
+    }
+
+    .card p {
+      font-size: 0.875rem;
+      color: var(--body);
+      line-height: 1.65;
+    }
+
+    /* PROBLEM STATEMENT */
+    .problem-block {
+      background: var(--blue-light);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 12px 12px 0;
+      padding: 28px 32px;
+      margin: 48px 0;
+    }
+
+    .problem-block p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      color: var(--navy);
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* DESIGN PAGE */
+    #design { background: var(--bg); }
+
+    .design-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .design-split.reverse { direction: rtl; }
+    .design-split.reverse > * { direction: ltr; }
+
+    .feature-list {
+      list-style: none;
+      margin-top: 24px;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--body);
+    }
+
+    .feature-list li:last-child { border-bottom: none; }
+
+    .feature-list .fi {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .feature-list strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    /* DEVICE SVG CONTAINER */
+    .device-showcase {
+      background: linear-gradient(135deg, #0A2540 0%, #1A4A7A 100%);
+      border-radius: 24px;
+      padding: 60px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .device-showcase::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(45,125,210,0.25) 0%, transparent 70%);
+    }
+
+    .device-showcase::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; right: -40px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(26,158,226,0.2) 0%, transparent 70%);
+    }
+
+    /* CALLOUT SPECS */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .spec-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+
+    .spec-item .spec-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+
+    .spec-item .spec-val {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    /* HOW IT WORKS */
+    #how { background: var(--white); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      position: relative;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: var(--border);
+      z-index: 0;
+    }
+
+    .step {
+      text-align: center;
+      padding: 32px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--navy);
+    }
+
+    .step p {
+      font-size: 0.825rem;
+      color: var(--body);
+      line-height: 1.6;
+    }
+
+    /* COMPATIBILITY */
+    .compat-row {
+      display: flex;
+      gap: 24px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    .compat-badge {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--navy);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .compat-badge:hover {
+      border-color: var(--blue);
+      box-shadow: 0 4px 16px rgba(45,125,210,0.12);
+    }
+
+    .compat-badge .ci { font-size: 1.6rem; }
+
+    /* REFERENCES */
+    #references { background: var(--bg); }
+
+    .ref-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .ref-list li {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 0.8rem;
+      color: var(--body);
+      line-height: 1.55;
+    }
+
+    .ref-list li a {
+      color: var(--blue);
+      word-break: break-all;
+      text-decoration: none;
+    }
+
+    .ref-list li a:hover { text-decoration: underline; }
+
+    .ref-num {
+      font-weight: 700;
+      color: var(--navy);
+      margin-right: 6px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 32px 48px;
+      font-size: 0.8rem;
+    }
+
+    footer strong { color: rgba(255,255,255,0.85); }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      section { padding: 72px 24px; }
+      .hero-inner, .design-split { grid-template-columns: 1fr; gap: 40px; }
+      .cards { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2,1fr); }
+      .steps { grid-template-columns: repeat(2,1fr); }
+      .steps::before { display: none; }
+      .ref-list { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#home">
+    <span class="dot"></span>KidneyGuard
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#project">Our Project</a></li>
+    <li><a href="#design">Design</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag">iSTEM Biomedical Innovation 2025</div>
+      <h1>Detect kidney disease <span>before it starts.</span></h1>
+      <p class="hero-sub">
+        KidneyGuard is a wearable biomarker monitor designed for people over 70. It tracks key health signals 24/7 and uses AI to flag early-stage chronic kidney disease — before any symptoms appear.
+      </p>
+      <a href="#project" class="btn">Learn More</a>
+      <a href="#design" class="btn btn-ghost">See the Device</a>
+    </div>
+    <div class="hero-visual">
+      <div class="device-wrap">
+        <div class="device-glow"></div>
+        <svg viewBox="0 0 340 340" width="340" height="340" xmlns="http://www.w3.org/2000/svg">
+          <!-- Glow ring -->
+          <circle cx="170" cy="170" r="155" fill="none" stroke="#2D7DD2" stroke-width="1" opacity="0.15"/>
+          <circle cx="170" cy="170" r="130" fill="none" stroke="#2D7DD2" stroke-width="1" opacity="0.1"/>
+
+          <!-- Main device body - patch shape -->
+          <rect x="90" y="100" width="160" height="140" rx="28" fill="url(#bodyGrad)" filter="url(#shadow)"/>
+
+          <!-- Surface detail -->
+          <rect x="98" y="108" width="144" height="124" rx="22" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+
+          <!-- Screen/display area -->
+          <rect x="112" y="122" width="116" height="78" rx="10" fill="url(#screenGrad)"/>
+
+          <!-- Heartrate line on screen -->
+          <polyline points="120,165 132,165 138,148 144,182 150,148 156,182 162,158 170,165 200,165 216,165"
+            fill="none" stroke="#2D7DD2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="2.4s" repeatCount="indefinite"/>
+          </polyline>
+
+          <!-- Reading label -->
+          <text x="170" y="213" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.55)" letter-spacing="1.5">REAL-TIME MONITORING</text>
+
+          <!-- Status dot -->
+          <circle cx="170" cy="226" r="4" fill="#2DEB8F">
+            <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/>
+          </circle>
+
+          <!-- Strap top -->
+          <rect x="138" y="74" width="64" height="28" rx="10" fill="url(#strapGrad)"/>
+          <rect x="148" y="80" width="44" height="2" rx="1" fill="rgba(255,255,255,0.12)"/>
+          <rect x="148" y="86" width="44" height="2" rx="1" fill="rgba(255,255,255,0.08)"/>
+          <rect x="148" y="92" width="44" height="2" rx="1" fill="rgba(255,255,255,0.06)"/>
+
+          <!-- Strap bottom -->
+          <rect x="138" y="238" width="64" height="28" rx="10" fill="url(#strapGrad)"/>
+          <rect x="148" y="244" width="44" height="2" rx="1" fill="rgba(255,255,255,0.12)"/>
+          <rect x="148" y="250" width="44" height="2" rx="1" fill="rgba(255,255,255,0.08)"/>
+          <rect x="148" y="256" width="44" height="2" rx="1" fill="rgba(255,255,255,0.06)"/>
+
+          <!-- Sensor dots on back indicator -->
+          <circle cx="145" cy="232" r="3.5" fill="#1A9EE2" opacity="0.7"/>
+          <circle cx="195" cy="232" r="3.5" fill="#1A9EE2" opacity="0.7"/>
+
+          <!-- Bluetooth icon -->
+          <text x="243" y="158" font-family="Inter,sans-serif" font-size="18" fill="#2D7DD2" opacity="0.8">⌬</text>
+
+          <!-- Wi-fi signal -->
+          <g transform="translate(88,148)" opacity="0.7">
+            <path d="M0,12 Q12,-2 24,12" fill="none" stroke="#2D7DD2" stroke-width="2" stroke-linecap="round"/>
+            <path d="M5,17 Q12,8 19,17" fill="none" stroke="#2D7DD2" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="21" r="2" fill="#2D7DD2"/>
+          </g>
+
+          <defs>
+            <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1C3B5C"/>
+              <stop offset="100%" stop-color="#0A2540"/>
+            </linearGradient>
+            <linearGradient id="screenGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0D2E4A"/>
+              <stop offset="100%" stop-color="#071E30"/>
+            </linearGradient>
+            <linearGradient id="strapGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#162F47"/>
+              <stop offset="100%" stop-color="#0C2035"/>
+            </linearGradient>
+            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0A2540" flood-opacity="0.35"/>
+            </filter>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat reveal">
+      <div class="stat-num"><span>800M</span></div>
+      <div class="stat-label">people living with CKD globally</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num"><span>87</span>%</div>
+      <div class="stat-label">of CKD patients unaware of their condition</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num"><span>34</span>%</div>
+      <div class="stat-label">of adults 65+ have chronic kidney disease</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">$<span>53B</span></div>
+      <div class="stat-label">lost by Medicare due to late-stage treatments</div>
+    </div>
+  </div>
+</div>
+
+<!-- OUR PROJECT -->
+<section id="project">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">The Problem</div>
+    <h2 class="reveal">Why kidneys, and why now?</h2>
+    <p class="section-lead reveal">
+      Chronic Kidney Disease is the third fastest-growing cause of death globally, projected to become the 5th leading cause of life-years lost by 2040. The tragedy is that most damage happens silently — long before any symptoms appear.
+    </p>
+
+    <div class="problem-block reveal">
+      <p>How might we integrate AI into modern medicine to detect kidney disease at its earliest stages to dramatically increase patient survival rates in the aging population?</p>
+    </div>
+
+    <div class="cards">
+      <div class="card reveal">
+        <div class="card-icon">🫁</div>
+        <h3>What is CKD?</h3>
+        <p>Chronic Kidney Disease occurs when kidneys gradually lose their ability to filter waste from the blood. It is classified into 5 stages — and by the time symptoms appear, significant damage has already occurred.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">🔬</div>
+        <h3>FSGS: The Root Cause</h3>
+        <p>Focal Segmental Glomerulosclerosis (FSGS) is a key driver of CKD. Scarring on the kidney's glomeruli causes vital proteins to leak into urine — a process that is silent but detectable through biomarkers early on.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">👴</div>
+        <h3>The Aging Population</h3>
+        <p>Kidney function naturally declines with age. 34% of adults over 65 have CKD. For those over 70, the compounding effects of hypertension, diabetes, and reduced GFR make early detection critical.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">🤖</div>
+        <h3>AI as the Solution</h3>
+        <p>AI can detect patterns in biomarker data that humans cannot. By analysing blood pressure, glucose, and urinary protein levels continuously, machine learning models can predict CKD risk months before clinical diagnosis.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">📉</div>
+        <h3>Current Treatment Gaps</h3>
+        <p>Standard markers like serum creatinine only rise after 40–50% of kidney tissue is already damaged. Current care is reactive — patients are diagnosed late, treated late, and outcomes suffer as a result.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">💡</div>
+        <h3>Our Approach</h3>
+        <p>KidneyGuard shifts care from reactive to proactive. A wearable device continuously monitors key biomarkers and feeds data to an AI system that flags risk early — giving patients and doctors time to act.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN -->
+<section id="design">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">The Device</div>
+    <h2 class="reveal">KidneyGuard</h2>
+    <p class="section-lead reveal">
+      A wearable patch worn on the wrist. Designed for simplicity — no setup, no configuration, no technical knowledge required. Built for people over 70 who may not own a smartphone or smartwatch.
+    </p>
+
+    <!-- Main device showcase -->
+    <div class="design-split reveal">
+      <div class="device-showcase">
+        <svg viewBox="0 0 400 420" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width:360px;position:relative;z-index:1;">
+
+          <!-- Straps -->
+          <rect x="152" y="18" width="96" height="80" rx="16" fill="#142840"/>
+          <rect x="164" y="28" width="72" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
+          <rect x="164" y="38" width="72" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+          <rect x="164" y="48" width="72" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
+          <rect x="164" y="58" width="72" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+          <rect x="164" y="68" width="72" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
+
+          <!-- Device body -->
+          <rect x="80" y="90" width="240" height="220" rx="36" fill="url(#dGrad)" filter="url(#dShadow)"/>
+          <!-- Sheen -->
+          <rect x="88" y="98" width="224" height="204" rx="30" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+
+          <!-- Screen -->
+          <rect x="104" y="114" width="192" height="136" rx="16" fill="url(#sGrad)"/>
+
+          <!-- KG logo on screen -->
+          <text x="200" y="148" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="11" fill="rgba(255,255,255,0.35)" letter-spacing="3">KIDNEYGUARD</text>
+
+          <!-- Live reading -->
+          <text x="200" y="185" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="36" fill="#FFFFFF">72</text>
+          <text x="200" y="202" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.45)" letter-spacing="1.5">BPM</text>
+
+          <!-- Waveform below reading -->
+          <polyline points="114,228 126,228 132,212 138,244 145,212 151,244 158,224 166,228 230,228 246,228"
+            fill="none" stroke="#2D7DD2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8">
+            <animate attributeName="stroke-dasharray" values="0,260;260,0" dur="2.8s" repeatCount="indefinite"/>
+          </polyline>
+
+          <!-- Bottom status row -->
+          <circle cx="163" cy="262" r="5" fill="#2DEB8F">
+            <animate attributeName="opacity" values="1;0.4;1" dur="1.8s" repeatCount="indefinite"/>
+          </circle>
+          <text x="175" y="266" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">MONITORING ACTIVE</text>
+
+          <!-- Side button -->
+          <rect x="318" y="160" width="8" height="32" rx="4" fill="#1A3D5E"/>
+
+          <!-- Sensor nodes on back indicator strip -->
+          <rect x="104" y="266" width="192" height="28" rx="0" fill="rgba(0,0,0,0.2)"/>
+          <circle cx="148" cy="280" r="6" fill="#0D3A5C" stroke="#1A9EE2" stroke-width="1.5"/>
+          <circle cx="172" cy="280" r="6" fill="#0D3A5C" stroke="#1A9EE2" stroke-width="1.5"/>
+          <circle cx="200" cy="280" r="6" fill="#0D3A5C" stroke="#1A9EE2" stroke-width="1.5"/>
+          <circle cx="228" cy="280" r="6" fill="#0D3A5C" stroke="#1A9EE2" stroke-width="1.5"/>
+          <circle cx="252" cy="280" r="6" fill="#0D3A5C" stroke="#1A9EE2" stroke-width="1.5"/>
+          <text x="200" y="307" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.3)" letter-spacing="1.2">PPG · ECG · BIOIMPEDANCE SENSORS</text>
+
+          <!-- Bottom strap -->
+          <rect x="152" y="310" width="96" height="92" rx="16" fill="#142840"/>
+          <rect x="164" y="322" width="72" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
+          <rect x="164" y="332" width="72" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+          <rect x="164" y="342" width="72" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
+          <rect x="164" y="352" width="72" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+          <rect x="164" y="362" width="72" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
+          <rect x="164" y="372" width="72" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+          <rect x="164" y="382" width="72" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
+          <rect x="164" y="392" width="72" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+
+          <!-- Callout lines -->
+          <line x1="82" y1="145" x2="52" y2="145" stroke="rgba(45,125,210,0.4)" stroke-width="1" stroke-dasharray="3,3"/>
+          <circle cx="52" cy="145" r="3" fill="#2D7DD2" opacity="0.6"/>
+
+          <line x1="318" y1="185" x2="350" y2="185" stroke="rgba(45,125,210,0.4)" stroke-width="1" stroke-dasharray="3,3"/>
+          <circle cx="350" cy="185" r="3" fill="#2D7DD2" opacity="0.6"/>
+
+          <defs>
+            <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1C3D60"/>
+              <stop offset="100%" stop-color="#0A2540"/>
+            </linearGradient>
+            <linearGradient id="sGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0D2E4A"/>
+              <stop offset="100%" stop-color="#061828"/>
+            </linearGradient>
+            <filter id="dShadow" x="-15%" y="-10%" width="130%" height="130%">
+              <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04111E" flood-opacity="0.6"/>
+            </filter>
+          </defs>
+        </svg>
+      </div>
+
+      <div>
+        <div class="section-eyebrow">Hardware</div>
+        <h2>Built for simplicity. Engineered for precision.</h2>
+        <ul class="feature-list">
+          <li>
+            <span class="fi">💧</span>
+            <div><strong>Continuous biomarker tracking</strong>Blood pressure, heart rate, glucose, and bioimpedance (a proxy for fluid retention and proteinuria) — monitored around the clock.</div>
+          </li>
+          <li>
+            <span class="fi">📡</span>
+            <div><strong>Universal connectivity</strong>Syncs automatically to Apple Watch and Garmin via Bluetooth. For users without a smartwatch, a companion app on any smartphone handles everything.</div>
+          </li>
+          <li>
+            <span class="fi">🤖</span>
+            <div><strong>On-device AI processing</strong>A lightweight AI model runs directly on the device, analysing trends in real time. Alerts are sent to the patient, carer, or GP when risk thresholds are crossed.</div>
+          </li>
+          <li>
+            <span class="fi">🔋</span>
+            <div><strong>7-day battery life</strong>Designed for older users — charge once a week, wear it always. Water-resistant to 50m.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Specs -->
+    <div class="section-eyebrow reveal" style="margin-top:24px;">Specifications</div>
+    <div class="specs-grid reveal">
+      <div class="spec-item">
+        <div class="spec-label">Sensors</div>
+        <div class="spec-val">PPG, ECG, Bioimpedance, Temperature</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Connectivity</div>
+        <div class="spec-val">Bluetooth 5.3, BLE, NFC</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Battery</div>
+        <div class="spec-val">7 days continuous use</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Water Resistance</div>
+        <div class="spec-val">50 metres (IPX8)</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Compatible Platforms</div>
+        <div class="spec-val">Apple Watch, Garmin, iOS, Android</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">AI Model</div>
+        <div class="spec-val">On-device + cloud inference (eGFR prediction)</div>
+      </div>
+    </div>
+
+    <!-- Compatibility badges -->
+    <div class="section-eyebrow reveal" style="margin-top:48px;">Works With</div>
+    <div class="compat-row reveal">
+      <div class="compat-badge"><span class="ci">⌚</span> Apple Watch</div>
+      <div class="compat-badge"><span class="ci">🟢</span> Garmin</div>
+      <div class="compat-badge"><span class="ci">📱</span> iOS App</div>
+      <div class="compat-badge"><span class="ci">🤖</span> Android App</div>
+      <div class="compat-badge"><span class="ci">🕐</span> Standalone (no phone needed)</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">Process</div>
+    <h2 class="reveal">How KidneyGuard works</h2>
+    <p class="section-lead reveal">
+      Four steps from wrist to diagnosis. The entire system runs automatically — no button presses, no manual logging required.
+    </p>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h3>Continuous Sensing</h3>
+        <p>KidneyGuard's sensors read blood pressure, heart rate variability, glucose levels, and bioimpedance every 60 seconds.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h3>On-Device AI</h3>
+        <p>A machine learning model trained on 621+ research studies analyses sensor data locally, looking for patterns associated with early CKD.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h3>Cloud Sync</h3>
+        <p>De-identified data is sent to the cloud where a larger AI model runs eGFR prediction and flags longitudinal trends that short-term sensors can't catch.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <h3>GP Alert</h3>
+        <p>When risk scores exceed safe thresholds, an automatic alert is sent to the patient's registered GP for early intervention — potentially years before symptoms appear.</p>
+      </div>
+    </div>
+
+    <!-- Ethical considerations -->
+    <div style="margin-top: 72px;">
+      <div class="section-eyebrow reveal">Ethical Considerations</div>
+      <h2 class="reveal">Built responsibly</h2>
+      <div class="cards" style="margin-top:32px;">
+        <div class="card reveal">
+          <div class="card-icon">🔒</div>
+          <h3>Data Privacy</h3>
+          <p>All biometric data is de-identified before cloud transmission. Patients own their data. The system is designed to meet Australian Privacy Act standards and TGA regulatory requirements.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">⚖️</div>
+          <h3>Equitable Access</h3>
+          <p>The device must be accessible across income levels and geographic locations. Subsidised distribution through the PBS and My Aged Care pathway is part of the proposed rollout model.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🧠</div>
+          <h3>AI Transparency</h3>
+          <p>Explainable AI (XAI) is used so doctors understand why the device raised an alert. The AI supports, but never replaces, clinical decision-making.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section id="references">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">Sources</div>
+    <h2 class="reveal">References</h2>
+    <p class="section-lead reveal">All claims on this website are supported by peer-reviewed literature and verified health organisations.</p>
+    <ol class="ref-list">
+      <li class="reveal"><span class="ref-num">1.</span>Merriam-Webster. Definition of DISEASE. <a href="https://www.merriam-webster.com/dictionary/disease" target="_blank">merriam-webster.com/dictionary/disease</a></li>
+      <li class="reveal"><span class="ref-num">2.</span>World Health Organization (2018). Noncommunicable diseases. <a href="https://www.who.int/en/news-room/fact-sheets/detail/noncommunicable-diseases" target="_blank">who.int</a></li>
+      <li class="reveal"><span class="ref-num">3.</span>Health Policy Watch (2022). WHO Unveils Invisible Numbers Of The NCD Crisis. <a href="https://healthpolicy-watch.news/who-unveils-invisible-numbers-of-the-ncd-crisis-as-leaders-meet-at-un/" target="_blank">healthpolicy-watch.news</a></li>
+      <li class="reveal"><span class="ref-num">4.</span>WHO EMRO. Noncommunicable diseases — causes. <a href="https://www.emro.who.int/noncommunicable-diseases/causes/" target="_blank">emro.who.int</a></li>
+      <li class="reveal"><span class="ref-num">5.</span>World Health Organization (2024). Noncommunicable diseases. <a href="https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases" target="_blank">who.int</a></li>
+      <li class="reveal"><span class="ref-num">6.</span>Sepsis Alliance (2024). Chronic and Noncommunicable Diseases. <a href="https://www.sepsis.org/sepsisand/chronic-and-noncommunicable-diseases/" target="_blank">sepsis.org</a></li>
+      <li class="reveal"><span class="ref-num">7.</span>Indus Health Plus (2021). NCD — Non Communicable Diseases. <a href="https://www.indushealthplus.com/ncds-non-communicable-diseases.html" target="_blank">indushealthplus.com</a></li>
+      <li class="reveal"><span class="ref-num">8.</span>NIDDK (2019). Kidney Disease. <a href="https://www.niddk.nih.gov/health-information/kidney-disease" target="_blank">niddk.nih.gov</a></li>
+      <li class="reveal"><span class="ref-num">9.</span>Study.com (2021). Nephron Parts, Function & Location. <a href="https://study.com/learn/lesson/nephron-parts-function-location.html" target="_blank">study.com</a></li>
+      <li class="reveal"><span class="ref-num">10.</span>Tapia C, Bashir K (2023). Nephrotic Syndrome. <a href="https://www.ncbi.nlm.nih.gov/books/NBK470444/" target="_blank">ncbi.nlm.nih.gov/books/NBK470444</a></li>
+      <li class="reveal"><span class="ref-num">11.</span>Beacon Health System (2020). Focal Segmental Glomerulosclerosis. <a href="https://www.beaconhealthsystem.org/library/diseases-and-conditions/focal-segmental-glomerulosclerosis-fsgs" target="_blank">beaconhealthsystem.org</a></li>
+      <li class="reveal"><span class="ref-num">12.</span>NephCure (2021). Precision Medicine, Podocytes, and Goldfinch Bio. <a href="https://nephcure.org/an-inside-look-precision-medicine-podocytes-and-goldfinch-bio/" target="_blank">nephcure.org</a></li>
+      <li class="reveal"><span class="ref-num">13.</span>Guruswamy Sangameswaran KD, Baradhi KM (2020). Focal Segmental Glomerulosclerosis. <a href="https://www.ncbi.nlm.nih.gov/books/NBK532272/" target="_blank">ncbi.nlm.nih.gov/books/NBK532272</a></li>
+      <li class="reveal"><span class="ref-num">14.</span>B. Fogo A (2014). Causes and pathogenesis of FSGS. Nature Reviews Nephrology. <a href="https://cdn1.redemc.net/campus/wp-content/uploads/2019/04/5.-Causes-and-pathogenesis-of-focal-segmental-glomerulosclerosis-NATURE-2014.pdf" target="_blank">Nature 2014 PDF</a></li>
+      <li class="reveal"><span class="ref-num">15.</span>Lennon R et al (2014). The Importance of Podocyte Adhesion. Frontiers in Endocrinology. <a href="https://doi.org/10.3389/fendo.2014.00160" target="_blank">doi.org/10.3389/fendo.2014.00160</a></li>
+      <li class="reveal"><span class="ref-num">16.</span>Cortinovis M et al (2024). Tubulointerstitial injury in proteinuric CKD. Frontiers in Medicine. <a href="https://doi.org/10.3389/fmed.2024.1478697" target="_blank">doi.org/10.3389/fmed.2024</a></li>
+      <li class="reveal"><span class="ref-num">17.</span>Earth's Lab (2018). Proximal Convoluted Tubule. <a href="https://www.earthslab.com/physiology/proximal-convoluted-tubule/" target="_blank">earthslab.com</a></li>
+      <li class="reveal"><span class="ref-num">18.</span>Chen L et al (2018). Inflammatory Responses in Organs. Oncotarget 9(6). <a href="https://doi.org/10.18632/oncotarget.23208" target="_blank">doi.org/10.18632/oncotarget.23208</a></li>
+      <li class="reveal"><span class="ref-num">19.</span>Yuan T et al (2025). Non-invasive diagnosis of renal fibrosis. Frontiers in Medicine. <a href="https://doi.org/10.3389/fmed.2025.1646412" target="_blank">doi.org/10.3389/fmed.2025</a></li>
+      <li class="reveal"><span class="ref-num">20.</span>National Kidney Foundation (2025). Aging and Kidney Disease. <a href="https://www.kidney.org/kidney-topics/aging-and-kidney-disease" target="_blank">kidney.org</a></li>
+      <li class="reveal"><span class="ref-num">21.</span>NIDDK (2023). Kidney disease statistics for the United States. <a href="https://www.niddk.nih.gov/health-information/health-statistics/kidney-disease" target="_blank">niddk.nih.gov</a></li>
+      <li class="reveal"><span class="ref-num">22.</span>Wu CC et al (2024). Artificial Intelligence in Kidney Disease. Diagnostics 14(4):397. <a href="https://doi.org/10.3390/diagnostics14040397" target="_blank">doi.org/10.3390/diagnostics14040397</a></li>
+      <li class="reveal"><span class="ref-num">23.</span>Mayo Clinic. Chronic Kidney Disease. <a href="https://www.mayoclinic.org/diseases-conditions/chronic-kidney-disease/symptoms-causes/syc-20354521" target="_blank">mayoclinic.org</a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>KidneyGuard</strong> &nbsp;|&nbsp; iSTEM Biomedical Research Task 2025 &nbsp;|&nbsp;
+  Thomas Li &nbsp;·&nbsp; Leo Ma &nbsp;·&nbsp; Derek Chen &nbsp;·&nbsp; Arjun Hari Shankar
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Nav active state
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? '#0A2540' : '';
+    });
+  });
+</script>
+
+</body>
+</html>
