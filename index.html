@@ -37,7 +37,62 @@
                 </p>
             </div>
             <div class="relative p-4 flex justify-center items-center">
-                <img src="image_89cc08.png" alt="KidneyGuard wearable prototype" class="rounded-xl shadow-md max-w-full h-auto border border-gray-200" />
+                <div class="relative w-[340px] h-[340px] animate-[float_4s_ease-in-out_infinite]">
+                    <style>
+                        @keyframes float {
+                            0%, 100% { transform: translateY(0px); }
+                            50% { transform: translateY(-12px); }
+                        }
+                    </style>
+                    <div class="absolute inset-[-20px] bg-[radial-gradient(circle,rgba(45,125,210,0.15)_0%,transparent_70%)] rounded-full"></div>
+                    <svg viewBox="0 0 340 340" width="340" height="340" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="170" cy="170" r="155" fill="none" stroke="#2D7DD2" stroke-width="1" opacity="0.15"/>
+                        <circle cx="170" cy="170" r="130" fill="none" stroke="#2D7DD2" stroke-width="1" opacity="0.1"/>
+                        <rect x="90" y="100" width="160" height="140" rx="28" fill="url(#bodyGrad)" filter="url(#shadow)"/>
+                        <rect x="98" y="108" width="144" height="124" rx="22" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+                        <rect x="112" y="122" width="116" height="78" rx="10" fill="url(#screenGrad)"/>
+                        <polyline points="120,165 132,165 138,148 144,182 150,148 156,182 162,158 170,165 200,165 216,165" fill="none" stroke="#2D7DD2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="2.4s" repeatCount="indefinite"/>
+                        </polyline>
+                        <text x="170" y="213" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.55)" letter-spacing="1.5">REAL-TIME MONITORING</text>
+                        <circle cx="170" cy="226" r="4" fill="#2DEB8F">
+                            <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/>
+                        </circle>
+                        <rect x="138" y="74" width="64" height="28" rx="10" fill="url(#strapGrad)"/>
+                        <rect x="148" y="80" width="44" height="2" rx="1" fill="rgba(255,255,255,0.12)"/>
+                        <rect x="148" y="86" width="44" height="2" rx="1" fill="rgba(255,255,255,0.08)"/>
+                        <rect x="148" y="92" width="44" height="2" rx="1" fill="rgba(255,255,255,0.06)"/>
+                        <rect x="138" y="238" width="64" height="28" rx="10" fill="url(#strapGrad)"/>
+                        <rect x="148" y="244" width="44" height="2" rx="1" fill="rgba(255,255,255,0.12)"/>
+                        <rect x="148" y="250" width="44" height="2" rx="1" fill="rgba(255,255,255,0.08)"/>
+                        <rect x="148" y="256" width="44" height="2" rx="1" fill="rgba(255,255,255,0.06)"/>
+                        <circle cx="145" cy="232" r="3.5" fill="#1A9EE2" opacity="0.7"/>
+                        <circle cx="195" cy="232" r="3.5" fill="#1A9EE2" opacity="0.7"/>
+                        <text x="243" y="158" font-family="Inter,sans-serif" font-size="18" fill="#2D7DD2" opacity="0.8">⌬</text>
+                        <g transform="translate(88,148)" opacity="0.7">
+                            <path d="M0,12 Q12,-2 24,12" fill="none" stroke="#2D7DD2" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M5,17 Q12,8 19,17" fill="none" stroke="#2D7DD2" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="12" cy="21" r="2" fill="#2D7DD2"/>
+                        </g>
+                        <defs>
+                            <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#1C3B5C"/>
+                                <stop offset="100%" stop-color="#0A2540"/>
+                            </linearGradient>
+                            <linearGradient id="screenGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#0D2E4A"/>
+                                <stop offset="100%" stop-color="#071E30"/>
+                            </linearGradient>
+                            <linearGradient id="strapGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#162F47"/>
+                                <stop offset="100%" stop-color="#0C2035"/>
+                            </linearGradient>
+                            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0A2540" flood-opacity="0.35"/>
+                            </filter>
+                        </defs>
+                    </svg>
+                </div>
             </div>
         </div>
     </section>
@@ -118,8 +173,63 @@
                         <li>Built out of water-resistant silicone so they can wear it in the shower safely.</li>
                     </ul>
                 </div>
-                <div class="border-4 border-gray-100 p-4 rounded-xl bg-gray-50 flex flex-col justify-center items-center text-center shadow-sm">
-                    <img src="image_89cc08.png" alt="KidneyGuard wearable prototype detail" class="rounded-xl shadow-sm max-w-full h-auto border border-gray-200" />
+                <div class="border-4 border-gray-100 p-4 rounded-xl bg-gray-50 flex flex-col justify-center items-center text-center shadow-sm relative overflow-hidden min-h-[400px]">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#0A2540] to-[#1A4A7A] rounded-xl z-0"></div>
+                    <svg viewBox="0 0 400 420" width="100%" xmlns="http://www.w3.org/2000/svg" class="max-w-[360px] relative z-10">
+                        <rect x="152" y="18" width="96" height="80" rx="16" fill="#142840"/>
+                        <rect x="164" y="28" width="72" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
+                        <rect x="164" y="38" width="72" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+                        <rect x="164" y="48" width="72" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
+                        <rect x="164" y="58" width="72" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+                        <rect x="164" y="68" width="72" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
+                        <rect x="80" y="90" width="240" height="220" rx="36" fill="url(#dGrad)" filter="url(#dShadow)"/>
+                        <rect x="88" y="98" width="224" height="204" rx="30" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+                        <rect x="104" y="114" width="192" height="136" rx="16" fill="url(#sGrad)"/>
+                        <text x="200" y="148" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="11" fill="rgba(255,255,255,0.35)" letter-spacing="3">KIDNEYGUARD</text>
+                        <text x="200" y="185" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="36" fill="#FFFFFF">72</text>
+                        <text x="200" y="202" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.45)" letter-spacing="1.5">BPM</text>
+                        <polyline points="114,228 126,228 132,212 138,244 145,212 151,244 158,224 166,228 230,228 246,228" fill="none" stroke="#2D7DD2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8">
+                            <animate attributeName="stroke-dasharray" values="0,260;260,0" dur="2.8s" repeatCount="indefinite"/>
+                        </polyline>
+                        <circle cx="163" cy="262" r="5" fill="#2DEB8F">
+                            <animate attributeName="opacity" values="1;0.4;1" dur="1.8s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="175" y="266" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)">MONITORING ACTIVE</text>
+                        <rect x="318" y="160" width="8" height="32" rx="4" fill="#1A3D5E"/>
+                        <rect x="104" y="266" width="192" height="28" rx="0" fill="rgba(0,0,0,0.2)"/>
+                        <circle cx="148" cy="280" r="6" fill="#0D3A5C" stroke="#1A9EE2" stroke-width="1.5"/>
+                        <circle cx="172" cy="280" r="6" fill="#0D3A5C" stroke="#1A9EE2" stroke-width="1.5"/>
+                        <circle cx="200" cy="280" r="6" fill="#0D3A5C" stroke="#1A9EE2" stroke-width="1.5"/>
+                        <circle cx="228" cy="280" r="6" fill="#0D3A5C" stroke="#1A9EE2" stroke-width="1.5"/>
+                        <circle cx="252" cy="280" r="6" fill="#0D3A5C" stroke="#1A9EE2" stroke-width="1.5"/>
+                        <text x="200" y="307" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.3)" letter-spacing="1.2">PPG · ECG · BIOIMPEDANCE SENSORS</text>
+                        <rect x="152" y="310" width="96" height="92" rx="16" fill="#142840"/>
+                        <rect x="164" y="322" width="72" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
+                        <rect x="164" y="332" width="72" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+                        <rect x="164" y="342" width="72" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
+                        <rect x="164" y="352" width="72" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+                        <rect x="164" y="362" width="72" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
+                        <rect x="164" y="372" width="72" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+                        <rect x="164" y="382" width="72" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
+                        <rect x="164" y="392" width="72" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+                        <line x1="82" y1="145" x2="52" y2="145" stroke="rgba(45,125,210,0.4)" stroke-width="1" stroke-dasharray="3,3"/>
+                        <circle cx="52" cy="145" r="3" fill="#2D7DD2" opacity="0.6"/>
+                        <line x1="318" y1="185" x2="350" y2="185" stroke="rgba(45,125,210,0.4)" stroke-width="1" stroke-dasharray="3,3"/>
+                        <circle cx="350" cy="185" r="3" fill="#2D7DD2" opacity="0.6"/>
+                        <defs>
+                            <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#1C3D60"/>
+                                <stop offset="100%" stop-color="#0A2540"/>
+                            </linearGradient>
+                            <linearGradient id="sGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#0D2E4A"/>
+                                <stop offset="100%" stop-color="#061828"/>
+                            </linearGradient>
+                            <filter id="dShadow" x="-15%" y="-10%" width="130%" height="130%">
+                                <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04111E" flood-opacity="0.6"/>
+                            </filter>
+                        </defs>
+                    </svg>
                 </div>
             </div>
         </div>
