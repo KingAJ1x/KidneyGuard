@@ -1,180 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iSTEM Project | KidneyGuard Early CKD Detector</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
+<body class="bg-gray-100 text-gray-800 font-sans antialiased">
 
-    <header class="bg-teal-700 text-white text-center py-4 px-4 shadow-md">
-        <h1 class="text-2xl font-bold tracking-wide">iSTEM Biomedical Engineering Presentation</h1>
-        <p class="text-sm opacity-90 mt-1">Assessment Task 2: Medical Device Innovation (2026)</p>
-        <p class="text-xs opacity-75 mt-0.5">Group Members: Thomas Li, Leo Ma, Derek Chen, Arjun Hari Shankar &bull; Year 10</p>
-    </header>
-
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 text-center py-3 text-sm font-medium">
-        <div class="space-x-6">
-            <a href="#overview" class="text-teal-700 hover:underline">Overview</a>
-            <a href="#background" class="text-teal-700 hover:underline">Background Research</a>
-            <a href="#prototype" class="text-teal-700 hover:underline">Our Device Design</a>
-            <a href="#system" class="text-teal-700 hover:underline">How It Works</a>
-            <a href="#references" class="text-teal-700 hover:underline">References</a>
+    <nav class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <span class="text-teal-700 text-xl font-bold tracking-tight"><i class="fa-solid fa-shield-heart"></i> KidneyGuard</span>
+                </div>
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#home" class="hover:text-teal-700 transition">Home</a>
+                    <a href="#project" class="hover:text-teal-700 transition">Our Project</a>
+                    <a href="#design" class="hover:text-teal-700 transition">Our Device</a>
+                    <a href="#how" class="hover:text-teal-700 transition">How It Works</a>
+                    <a href="#references" class="hover:text-teal-700 transition">References</a>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
-
-        <section id="overview" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
-            <span class="text-xs uppercase bg-teal-100 text-teal-800 font-semibold px-2.5 py-1 rounded">Project Proposal 2026</span>
-            <h2 class="text-3xl font-bold text-gray-900 mt-4">KidneyGuard: Early Chronic Kidney Disease Detection</h2>
-            <p class="mt-4 text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                For our Year 10 iSTEM assessment, our group designed a concept for a wearable wrist patch tailored for elderly citizens over 70. Our goal is to use non-invasive biometric sensors paired with a basic machine learning algorithm to catch signs of early-stage Chronic Kidney Disease (CKD) before physical symptoms become severe.
-            </p>
-        </section>
-
-        <section id="background" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-6">
-            <div>
-                <h3 class="text-xs uppercase tracking-wider text-teal-600 font-bold">Part A: Literature Review</h3>
-                <h4 class="text-2xl font-bold text-gray-900 mt-1">Why Did We Choose Kidney Disease?</h4>
+    <section id="home" class="py-12 bg-white relative border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-center md:text-left">
+                <span class="text-xs font-semibold tracking-widest text-teal-700 uppercase bg-teal-50 px-3 py-1 rounded border border-teal-100">Year 10 iSTEM Assessment Task (2026)</span>
+                <h1 class="mt-6 text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+                    KidneyGuard: Early Chronic Kidney Disease Detection Concept
+                </h1>
+                <p class="mt-4 text-base text-slate-600 leading-relaxed max-w-xl mx-auto md:mx-0">
+                    Welcome to our iSTEM group project website. KidneyGuard is an idea we came up with for a simple wearable wrist patch designed for elderly people over 70. Our project looks at how basic sensors and data tracking could help spot early signs of kidney issues before they get too serious.
+                </p>
+                <p class="mt-3 text-xs text-slate-500 italic">
+                    Scroll down to read our project report, see our device concept specifications, and view our research references.
+                </p>
             </div>
-            
-            <p class="text-sm text-gray-600 leading-relaxed">
-                Chronic Kidney Disease is a major health crisis globally, especially among aging demographics. The core issue we identified during our initial research phase is that most early damage to the kidneys happens silently. Standard clinical markers, such as evaluating serum creatinine, often only show noticeable spikes after 40 to 50 percent of functional kidney tissue has suffered permanent damage.
-            </p>
+            <div class="relative p-4 flex justify-center items-center">
+                <img src="image_1.png" alt="KidneyGuard wearable prototype" class="rounded-xl shadow-md max-w-full h-auto border border-gray-200" />
+            </div>
+        </div>
+    </section>
 
-            <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r">
-                <p class="text-xs font-bold text-amber-800 uppercase">Our Core Design Inquiry Question:</p>
-                <p class="text-sm text-gray-700 italic mt-1">
-                    "How might we integrate basic AI principles into modern personal wearables to track potential kidney degradation early, thereby supporting preventative GP medical care in local clinical contexts?"
+    <section class="py-12 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div>
+                    <p class="text-3xl font-bold text-teal-700">800M</p>
+                    <p class="text-xs font-medium text-slate-500 mt-1">CKD patients globally</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-teal-700">87%</p>
+                    <p class="text-xs font-medium text-slate-500 mt-1">People unaware they have it</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-teal-700">34%</p>
+                    <p class="text-xs font-medium text-slate-500 mt-1">Adults 65+ affected</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-teal-700">$53B</p>
+                    <p class="text-xs font-medium text-slate-500 mt-1">Annual Medicare treatment costs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-xs font-semibold tracking-widest text-teal-700 uppercase">Project Background</h2>
+                <p class="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Why We Chose This Topic</p>
+                <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+                    Chronic Kidney Disease is a major health issue that is growing quickly around the world. During our initial research phase, our group found that most early damage to the kidneys happens silently. Usually, doctors only find out when standard blood tests show a spike in waste products, but that often doesn't happen until a lot of the kidney tissue is already permanently damaged.
                 </p>
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                <div class="border border-gray-100 p-4 rounded bg-gray-50">
-                    <h5 class="font-bold text-gray-900 text-sm mb-1">What is FSGS?</h5>
-                    <p class="text-xs text-gray-600">Focal Segmental Glomerulosclerosis is a condition involving localized scarring within kidney filtering units. This causes critical blood proteins to steadily escape into urine, which our device tries to predict via longitudinal systemic changes.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 space-y-2">
+                    <i class="fa-solid fa-lungs text-2xl text-teal-700 mb-1"></i>
+                    <h3 class="text-base font-bold text-slate-900">What is CKD?</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Chronic Kidney Disease means the kidneys slowly lose their ability to clean waste out of the blood properly. It has 5 different stages, and because it doesn't hurt, people don't notice it until the later stages.
+                    </p>
                 </div>
-                <div class="border border-gray-100 p-4 rounded bg-gray-50">
-                    <h5 class="font-bold text-gray-900 text-sm mb-1">The Gaps in Current Care</h5>
-                    <p class="text-xs text-gray-600">Current screening models are predominantly reactive. Elderly patients living remotely or outside regular clinical checkups rarely complete routine urinalysis until symptoms materialize at advanced stages.</p>
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 space-y-2">
+                    <i class="fa-solid fa-microscope text-2xl text-teal-700 mb-1"></i>
+                    <h3 class="text-base font-bold text-slate-900">The Problem With Current Testing</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Right now, regular screening requires patients to go into a lab for blood and urine tests. Elderly people living far away from clinics or who don't get regular checkups often miss these entirely.
+                    </p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 space-y-2">
+                    <i class="fa-solid fa-user-gear text-2xl text-teal-700 mb-1"></i>
+                    <h3 class="text-base font-bold text-slate-900">Helping Older Patients</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Kidney health naturally drops as people get older. Over 30% of adults over 65 have some level of kidney issues. High blood pressure and diabetes make this risk even worse for people over 70.
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="prototype" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-6">
-            <div>
-                <h3 class="text-xs uppercase tracking-wider text-teal-600 font-bold">Part B: Hardware Design Concept</h3>
-                <h4 class="text-2xl font-bold text-gray-900 mt-1">KidneyGuard Technical Specifications</h4>
-                <p class="text-sm text-gray-600 mt-1">Our proposed wearable patch layout is structured specifically to serve senior citizens who may struggle with complex smartphone setups or modern smartwatches.</p>
+    <section id="design" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-xs font-semibold tracking-widest text-teal-700 uppercase">Device Concept</h2>
+                <p class="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">How the Wrist Patch is Setup</p>
+                <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+                    We designed this wearable idea to be as simple as possible. It is intended for older users who might not have a smartphone or understand how to configure complicated modern smartwatches.
+                </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="border border-gray-200 p-4 rounded bg-slate-50 flex flex-col justify-center items-center text-center">
-                    <span class="text-xs font-mono text-gray-400 mb-2">[ Concept Mockup Interface ]</span>
-                    <div class="border border-gray-300 rounded bg-white p-4 w-48 shadow-sm">
-                        <div class="text-[10px] text-gray-400 uppercase font-bold tracking-tight">Active Sensor Stream</div>
-                        <div class="text-3xl font-mono my-2 text-teal-600">72 <span class="text-xs text-gray-500">BPM</span></div>
-                        <div class="text-[9px] bg-emerald-100 text-emerald-800 py-0.5 px-1.5 rounded inline-block font-semibold">Status: Monitoring</div>
-                    </div>
-                    <p class="text-xs text-gray-500 mt-3 italic">Figure 1.0: Planned on-device layout indicator light display matrix.</p>
-                </div>
-
+            <div class="grid md:grid-cols-2 gap-10 items-center">
                 <div class="space-y-4">
-                    <h5 class="font-bold text-sm text-gray-900 uppercase tracking-wide">Sensor Array Breakdown</h5>
-                    <ul class="list-disc list-inside text-xs text-gray-600 space-y-2">
-                        <li><strong>Continuous Metric Tracking:</strong> Tracks heart rate variability, baseline temperature shifts, and relative bioimpedance.</li>
-                        <li><strong>Planned Connectivity Features:</strong> Utilizes low-power Bluetooth modules to pair up with mainstream health trackers or feed metrics straight to a dedicated family mobile interface.</li>
-                        <li><strong>On-Device Code execution:</strong> Employs a low-footprint predictive script processing basic metrics continuously without demanding large wireless data overheads.</li>
+                    <h4 class="text-xl font-bold text-slate-900">Key Features of Our Idea:</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Our design tries to solve the problem by tracking general health stats over time, looking for long-term patterns that show a user might need to visit their local GP for an actual checkup.</p>
+                    <ul class="space-y-2 text-xs text-gray-700">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-droplet text-teal-700"></i> Tracks basic vitals like heart rate variations and skin temperature.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-signal text-teal-700"></i> Uses a basic skin-contact sensor setup that doesn't require needles.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-microchip text-teal-700"></i> Runs a simple calculation script built directly onto the band microchip.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-battery-full text-teal-700"></i> Planned to use a simple battery that lasts a week so they don't have to charge it constantly.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-water text-teal-700"></i> Built out of water-resistant silicone so they can wear it in the shower safely.</li>
                     </ul>
                 </div>
-            </div>
-
-            <div class="border border-gray-200 rounded overflow-hidden mt-4">
-                <table class="w-full text-left text-xs">
-                    <thead class="bg-gray-50 text-gray-700 uppercase font-semibold border-b border-gray-200">
-                        <tr>
-                            <th class="p-3">Component Sector</th>
-                            <th class="p-3">Proposed Technical Component</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200 text-gray-600">
-                        <tr><td class="p-3 font-medium text-gray-900">Biometric Sensor Modality</td><td class="p-3">Photoplethysmography (PPG), ECG contacts, Bioimpedance arrays</td></tr>
-                        <tr><td class="p-3 font-medium text-gray-900">Wireless Core Module</td><td class="p-3">Bluetooth 5.3 Low Energy (BLE) transceivers</td></tr>
-                        <tr><td class="p-3 font-medium text-gray-900">Estimated Operation Profile</td><td class="p-3">Rechargeable Li-Po cell supporting roughly 7 days of uptime</td></tr>
-                        <tr><td class="p-3 font-medium text-gray-900">Enclosure Integrity</td><td class="p-3">Water-resistant silicone structural outer casing (IPX8 rated)</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section id="system" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-6">
-            <div>
-                <h3 class="text-xs uppercase tracking-wider text-teal-600 font-bold">Part C: System Operational Flowchart</h3>
-                <h4 class="text-2xl font-bold text-gray-900 mt-1">Proposed Data Pipeline</h4>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-center text-xs">
-                <div class="border border-dashed border-gray-300 p-3 rounded bg-gray-50">
-                    <div class="font-bold text-teal-700 mb-1">Step 1</div>
-                    <p class="text-gray-600">Sensors scan blood pressure vectors and systemic fluid volume tracking trends every 60 seconds.</p>
-                </div>
-                <div class="border border-dashed border-gray-300 p-3 rounded bg-gray-50">
-                    <div class="font-bold text-teal-700 mb-1">Step 2</div>
-                    <p class="text-gray-600">Local microprocessor compares biometric values against baseline clinical reference statistics.</p>
-                </div>
-                <div class="border border-dashed border-gray-300 p-3 rounded bg-gray-50">
-                    <div class="font-bold text-teal-700 mb-1">Step 3</div>
-                    <p class="text-gray-600">Anonymized telemetry sets sync to local network clouds to check for subtle multi-week variations.</p>
-                </div>
-                <div class="border border-dashed border-gray-300 p-3 rounded bg-gray-50">
-                    <div class="font-bold text-teal-700 mb-1">Step 4</div>
-                    <p class="text-gray-600">If the safety threshold breaches, the application flags a warning note to prompt a medical checkup.</p>
+                <div class="border-4 border-gray-100 p-4 rounded-xl bg-gray-50 flex flex-col justify-center items-center text-center shadow-sm">
+                    <img src="image_1.png" alt="KidneyGuard wearable prototype detail" class="rounded-xl shadow-sm max-w-full h-auto border border-gray-200" />
+                    <p class="text-[11px] text-slate-500 mt-3 italic">Figure 1.0: Our proposed design layout showing the basic active monitoring display face.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="pt-4 border-t border-gray-100">
-                <h5 class="text-sm font-bold text-gray-900 mb-2">Ethics & Practical Constraints Checklist</h5>
-                <p class="text-xs text-gray-600 leading-relaxed">
-                    As part of our project criteria, we must evaluate social and economic boundaries. The prototype relies entirely on secure data principles where user bio-records remain disconnected from commercial identifiers. Furthermore, to make this an equitable healthcare option, our deployment strategy envisions distribution through regional medical networks rather than relying on direct private retail sales.
-                </p>
+    <section id="how" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-xs font-semibold tracking-widest text-teal-700 uppercase">Process</h2>
+                <p class="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Proposed Data Flow</p>
+                <p class="mt-4 text-sm text-slate-600">This is the 4-step process we mapped out for how the device would collect and share data.</p>
             </div>
-        </section>
 
-        <section id="references" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-            <h3 class="text-lg font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Academic Bibliography & Sources</h3>
-            <ol class="space-y-2.5 text-[11px] text-gray-500 list-decimal list-inside leading-normal">
-                <li>Merriam-Webster. Definition of DISEASE. <a href="https://www.merriam-webster.com/dictionary/disease" target="_blank" class="text-teal-600 hover:underline">merriam-webster.com/dictionary/disease</a></li>
-                <li>World Health Organization (2018). Noncommunicable diseases. <a href="https://www.who.int/en/news-room/fact-sheets/detail/noncommunicable-diseases" target="_blank" class="text-teal-600 hover:underline">who.int</a></li>
-                <li>Health Policy Watch (2022). WHO Unveils Invisible Numbers Of The NCD Crisis. <a href="https://healthpolicy-watch.news/who-unveils-invisible-numbers-of-the-ncd-crisis-as-leaders-meet-at-un/" target="_blank" class="text-teal-600 hover:underline">healthpolicy-watch.news</a></li>
-                <li>WHO EMRO. Noncommunicable diseases — causes. <a href="https://www.emro.who.int/noncommunicable-diseases/causes/" target="_blank" class="text-teal-600 hover:underline">emro.who.int</a></li>
-                <li>World Health Organization (2024). Noncommunicable diseases. <a href="https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases" target="_blank" class="text-teal-600 hover:underline">who.int</a></li>
-                <li>Sepsis Alliance (2024). Chronic and Noncommunicable Diseases. <a href="https://www.sepsis.org/sepsisand/chronic-and-noncommunicable-diseases/" target="_blank" class="text-teal-600 hover:underline">sepsis.org</a></li>
-                <li>Indus Health Plus (2021). NCD — Non Communicable Diseases. <a href="https://www.indushealthplus.com/ncds-non-communicable-diseases.html" target="_blank" class="text-teal-600 hover:underline">indushealthplus.com</a></li>
-                <li>NIDDK (2019). Kidney Disease. <a href="https://www.niddk.nih.gov/health-information/kidney-disease" target="_blank" class="text-teal-600 hover:underline">niddk.nih.gov</a></li>
-                <li>Study.com (2021). Nephron Parts, Function & Location. <a href="https://study.com/learn/lesson/nephron-parts-function-location.html" target="_blank" class="text-teal-600 hover:underline">study.com</a></li>
-                <li>Tapia C, Bashir K (2023). Nephrotic Syndrome. <a href="https://www.ncbi.nlm.nih.gov/books/NBK470444/" target="_blank" class="text-teal-600 hover:underline">ncbi.nlm.nih.gov/books/NBK470444</a></li>
-                <li>Beacon Health System (2020). Focal Segmental Glomerulosclerosis. <a href="https://www.beaconhealthsystem.org/library/diseases-and-conditions/focal-segmental-glomerulosclerosis-fsgs" target="_blank" class="text-teal-600 hover:underline">beaconhealthsystem.org</a></li>
-                <li>NephCure (2021). Precision Medicine, Podocytes, and Goldfinch Bio. <a href="https://nephcure.org/an-inside-look-precision-medicine-podocytes-and-goldfinch-bio/" target="_blank" class="text-teal-600 hover:underline">nephcure.org</a></li>
-                <li>Guruswamy Sangameswaran KD, Baradhi KM (2020). Focal Segmental Glomerulosclerosis. <a href="https://www.ncbi.nlm.nih.gov/books/NBK532272/" target="_blank" class="text-teal-600 hover:underline">ncbi.nlm.nih.gov/books/NBK532272</a></li>
-                <li>B. Fogo A (2014). Causes and pathogenesis of FSGS. Nature Reviews Nephrology. <a href="https://cdn1.redemc.net/campus/wp-content/uploads/2019/04/5.-Causes-and-pathogenesis-of-focal-segmental-glomerulosclerosis-NATURE-2014.pdf" target="_blank" class="text-teal-600 hover:underline">Nature 2014 PDF</a></li>
-                <li>Lennon R et al (2014). The Importance of Podocyte Adhesion. Frontiers in Endocrinology. <a href="https://doi.org/10.3389/fendo.2014.00160" target="_blank" class="text-teal-600 hover:underline">doi.org/10.3389/fendo.2014.00160</a></li>
-                <li>Cortinovis M et al (2024). Tubulointerstitial injury in proteinuric CKD. Frontiers in Medicine. <a href="https://doi.org/10.3389/fmed.2024.1478697" target="_blank" class="text-teal-600 hover:underline">doi.org/10.3389/fmed.2024</a></li>
-                <li>Earth's Lab (2018). Proximal Convoluted Tubule. <a href="https://www.earthslab.com/physiology/proximal-convoluted-tubule/" target="_blank" class="text-teal-600 hover:underline">earthslab.com</a></li>
-                <li>Chen L et al (2018). Inflammatory Responses in Organs. Oncotarget 9(6). <a href="https://doi.org/10.18632/oncotarget.23208" target="_blank" class="text-teal-600 hover:underline">doi.org/10.18632/oncotarget.23208</a></li>
-                <li>Yuan T et al (2025). Non-invasive diagnosis of renal fibrosis. Frontiers in Medicine. <a href="https://doi.org/10.3389/fmed.2025.1646412" target="_blank" class="text-teal-600 hover:underline">doi.org/10.3389/fmed.2025</a></li>
-                <li>National Kidney Foundation (2025). Aging and Kidney Disease. <a href="https://www.kidney.org/kidney-topics/aging-and-kidney-disease" target="_blank" class="text-teal-600 hover:underline">kidney.org</a></li>
-                <li>NIDDK (2023). Kidney disease statistics for the United States. <a href="https://www.niddk.nih.gov/health-information/health-statistics/kidney-disease" target="_blank" class="text-teal-600 hover:underline">niddk.nih.gov</a></li>
-                <li>Wu CC et al (2024). Artificial Intelligence in Kidney Disease. Diagnostics 14(4):397. <a href="https://doi.org/10.3390/diagnostics14040397" target="_blank" class="text-teal-600 hover:underline">doi.org/10.3390/diagnostics14040397</a></li>
-                <li>Mayo Clinic. Chronic Kidney Disease. <a href="https://www.mayoclinic.org/diseases-conditions/chronic-kidney-disease/symptoms-causes/syc-20354521" target="_blank" class="text-teal-600 hover:underline">mayoclinic.org</a></li>
-            </ol>
-        </section>
-    </main>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="relative bg-white p-5 rounded-lg border border-gray-200 shadow-sm space-y-1">
+                    <span class="absolute top-3 right-4 text-2xl font-black text-gray-200">01</span>
+                    <h3 class="text-base font-bold text-teal-700 mt-2">Reading Vitals</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">The skin sensors check heart rates, fluid retention signs, and temperature trends automatically every minute.</p>
+                </div>
+                <div class="relative bg-white p-5 rounded-lg border border-gray-200 shadow-sm space-y-1">
+                    <span class="absolute top-3 right-4 text-2xl font-black text-gray-200">02</span>
+                    <h3 class="text-base font-bold text-teal-700 mt-2">Checking Stats</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">A small processor chip inside the wristband compares these daily numbers against normal medical baselines.</p>
+                </div>
+                <div class="relative bg-white p-5 rounded-lg border border-gray-200 shadow-sm space-y-1">
+                    <span class="absolute top-3 right-4 text-2xl font-black text-gray-200">03</span>
+                    <h3 class="text-base font-bold text-teal-700 mt-2">Syncing Data</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">The band saves historical logs and syncs them to a companion application to watch for multi-week drops in vital trends.</p>
+                </div>
+                <div class="relative bg-white p-5 rounded-lg border border-gray-200 shadow-sm space-y-1">
+                    <span class="absolute top-3 right-4 text-2xl font-black text-gray-200">04</span>
+                    <h3 class="text-base font-bold text-teal-700 mt-2">Sending Alert</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">If numbers look consistently out of range, the app sends a warning note recommending that the user schedules a clinic checkup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer class="bg-gray-800 text-gray-400 py-6 mt-12 text-center text-xs border-t border-gray-700">
-        <p class="font-medium text-gray-300">Year 10 iSTEM High School Assessment Portfolio Task | 2026</p>
-        <p class="mt-1 opacity-75">All concepts and layout diagrams featured are compiled for educational evaluation objectives only.</p>
+    <section id="references" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-xs font-semibold tracking-widest text-teal-700 uppercase mb-1">Sources</h2>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Project References & Bibliography</h3>
+                <p class="text-slate-600 text-xs mb-6">These are the medical pages and reports we used to get the information and statistics for our project write-up.</p>
+                
+                <ol class="space-y-2 text-[11px] text-gray-500 list-decimal list-inside border-t border-gray-100 pt-4">
+                    <li>Merriam-Webster. Definition of DISEASE. <a href="https://www.merriam-webster.com/dictionary/disease" target="_blank" class="text-teal-600 hover:underline">merriam-webster.com/dictionary/disease</a></li>
+                    <li>World Health Organization (2018). Noncommunicable diseases. <a href="https://www.who.int/en/news-room/fact-sheets/detail/noncommunicable-diseases" target="_blank" class="text-teal-600 hover:underline">who.int</a></li>
+                    <li>NIDDK (2019). Kidney Disease Information. <a href="https://www.niddk.nih.gov/health-information/kidney-disease" target="_blank" class="text-teal-600 hover:underline">niddk.nih.gov</a></li>
+                    <li>Mayo Clinic. Chronic Kidney Disease Overview. <a href="https://www.mayoclinic.org/diseases-conditions/chronic-kidney-disease/symptoms-causes/syc-20354521" target="_blank" class="text-teal-600 hover:underline">mayoclinic.org</a></li>
+                    <li>Figure 1.0: Concept project layout design.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-400 py-6 border-t border-gray-700 text-center text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-1">
+            <p class="font-semibold text-white">Year 10 iSTEM High School Assessment Portfolio Task | 2026</p>
+            <p class="text-xs text-slate-500">Thomas Li &bull; Leo Ma &bull; Derek Chen &bull; Arjun Hari Shankar</p>
+            <p class="opacity-75">Compiled purely for school evaluation purposes.</p>
+        </div>
     </footer>
 
 </body>
